@@ -1,0 +1,18 @@
+CREATE TABLE headhunter_salary.vacancies
+(`id` String,
+`name` String,
+`salary_from` Nullable(Float64),
+`salary_to` Nullable(Float64),
+`currency` String,
+`experience` String,
+`schedule` String,
+`created_at` DateTime,
+`employer` String,
+`employment` String,
+`city` String,
+`area_url` String,
+`area_id` String,
+`area_name` String)
+ENGINE = ReplacingMergeTree ORDER BY id
+
+client = Client(host='localhost', user='default', password='', port='9000', database='hh')
